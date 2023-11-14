@@ -46,24 +46,7 @@ const Search = styled('div')(({ theme }) => ({
     width: 'auto',
   },
 }));
-const SearchBar = ({setSearchQuery}) => (
-  <form>
-    <TextField
-      id="search-bar"
-      className="text"
-      onInput={(e) => {
-        setSearchQuery(e.target.value);
-      }}
-      label="Enter a city name"
-      variant="outlined"
-      placeholder="Search..."
-      size="small"
-    />
-    <IconButton type="submit" aria-label="search">
-      <SearchIcon style={{ fill: "blue" }} />
-    </IconButton>
-  </form>
-);
+
 
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -75,6 +58,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
 }));
+
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
@@ -235,28 +219,7 @@ const SubMenuWrapper = styled(Box)(
 
 
 function SidebarMenu() {
-const data = [
-    "Paris",
-    "London",
-    "New York",
-    "Tokyo",
-    "Berlin",
-    "Buenos Aires",
-    "Cairo",
-    "Canberra",
-    "Rio de Janeiro",
-    "Dublin"
-  ];
 
-  const filterData = (query, data) => {
-  if (!query) {
-    return data;
-  } else {
-    return data.filter((d) => d.toLowerCase().includes(query));
-  }
-};
-   const [searchQuery, setSearchQuery] = useState("");
-  const dataFiltered = filterData(searchQuery, data);
 
   const { closeSidebar } = useContext(SidebarContext);
   const router = useRouter();
