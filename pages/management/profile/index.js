@@ -14,7 +14,7 @@ function ManagementUserProfile() {
     description:
       " ",
     jobtitle: 'Web Developer',
-    location: 'Bhopal, MP',
+    location: 'Delhi,',
     followers: '465'
   };
 

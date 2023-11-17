@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 import {
   Box,
   Button,
@@ -101,13 +101,15 @@ const NextJsAvatar = styled(Box)(
 function Hero() {
   const [username,setUsername] = useState("");
   const [password,setPassword] = useState("");
+  const [email,setEmail] = useState("");
   const [error, setError] = useState('');
   // const [users,setUsers] = useState([]);
+  
 
   const handleLogin = async (e) => {
      e.preventDefault();
 
-    if (!username || !password) {
+    if (!username || !password||!email) {
       setError('All fields are required.');
       return;
     }
@@ -135,11 +137,13 @@ function Hero() {
           <form onSubmit={handleLogin} >
             <h2 className={style.h2}>sign in</h2>
             <input autoComplete='current-username' className={style.input1}  onChange={(e)=>setUsername(e.target.value) }  type="text" name='username' placeholder='username' />
+            <input autoComplete='current-email' className={style.input3}  onChange={(e)=>setEmail(e.target.value) }  type="text" name='email' placeholder='Email' />
             <input autoComplete='current-password' className={style.input2}  onChange={(e)=>setPassword(e.target.value) } type="password" name='password' placeholder='password' />
              {error && <p style={{ color: 'red' }}>{error}</p>}
             <button className={style.button}>Log In</button>
           </form>
             <Link className= {style.forgot} href="/forget/forgetPass">Forgot password?</Link>
+            <Link className= {style.singup} href="/singup/signUp">SignUp</Link>
             <Box className= {style.dash}> 
             <Button
                   component={Link}

@@ -92,11 +92,11 @@ function HeaderMenu() {
             classes={{ root: 'MuiListItem-indicators' }}
             button
             component={Link}
-            href="/components/hrPolicies"
+            href="/components/knowledge"
           >
             <ListItemText
               primaryTypographyProps={{ noWrap: true }}
-              primary="Knowledge Bank"
+              primary="knowledge Bank"
             />
           </ListItem>
           
@@ -125,11 +125,11 @@ function HeaderMenu() {
             classes={{ root: 'MuiListItem-indicators' }}
             button
             component={Link}
-            href="/components/myTeam"
+            href="/components/fcdHr"
           >
             <ListItemText
               primaryTypographyProps={{ noWrap: true }}
-              primary="Square HR"
+              primary="FCD Hr"
             />
           </ListItem>
         </List>
