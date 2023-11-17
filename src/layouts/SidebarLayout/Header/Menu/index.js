@@ -92,7 +92,7 @@ function HeaderMenu() {
             classes={{ root: 'MuiListItem-indicators' }}
             button
             component={Link}
-            href="/components/knowledge"
+            href="/knowledge"
           >
             <ListItemText
               primaryTypographyProps={{ noWrap: true }}

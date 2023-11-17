@@ -87,7 +87,7 @@
     border-radius: 5px;
     color: #fff;
     height: 30px;
-    width: 120px;
+    width: 130px;
     left: 85%;
     bottom: 52%;
     background-color: #008D4C;
@@ -98,4 +98,13 @@
     font-family: gilroy;
     font-weight: 600;
     color: #ffff;
+ }
+ .modalHead{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(227, 149, 2);
+    color: white;
+    padding: 0px 1em;
+    cursor: pointer;
  }

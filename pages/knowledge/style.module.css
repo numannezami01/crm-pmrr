@@ -1,0 +1,141 @@
+.main{
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 140vh;
+  width: 100%;
+  /* background-color:red */
+}
+.nav{
+ position: fixed;
+ z-index: 99999;
+ display: flex;
+ align-items: center;
+ justify-content: centernpm run ;
+ height:60px;
+ width: 100%;
+ background-color:#4D4D4D;
+ border-bottom: 1px solid #ffffff65;
+}
+.top{
+ position: relative;
+ overflow: hidden;
+ height: 300px;
+ width: 100%;
+ background-color: rgba(0, 0, 0, 0.939);
+}
+.photo{
+ position: relative;
+ text-align: center;
+ height: 100%;
+ width: 400px;
+ top: 10%;
+ 
+}
+.img{
+position: relative;
+filter: grayscale(2);
+}
+.text{
+ position: relative;
+ font-size: 40px;
+ font-family: gilroy;
+ letter-spacing: 5px;
+ z-index: 9;
+ top: 50%;
+ left: 40%;
+ color: #ffff;
+}
+.bottom{
+position: relative;
+height:100vh;
+width: 100%;
+/* background-color: blueviolet; */
+
+}
+.h3{
+position: relative;
+text-transform:capitalize;
+left: 6%;
+top: 5%;
+font-weight: 600;
+font-size: 30px;
+font-family: gilroy;
+letter-spacing: 1px;
+color: #333333;
+}
+.bigbox{
+position: relative;
+white-space: nowrap;
+overflow-x: auto;
+overflow-y: hidden;
+top: 5%;
+left: 5%;
+height: 240px;
+width: 1200px;
+/* background-color: red; */
+}
+.bigbox::-webkit-scrollbar {
+  display: none;
+}
+
+
+.box{
+position: relative;
+overflow: hidden;
+height: 220px;
+width: 250px;
+cursor: pointer;
+display: inline-block;
+background-position: center;  
+/* background-color: aqua; */
+border-radius: 5px;
+margin: 10px;
+}
+ .img{
+  position: absolute;
+  filter : grayscale(3);
+  height: 100%;
+  width: 100%;
+ }
+
+.smbox{
+transition: all ease 0.5s ;
+border: none;
+position:  absolute;
+height: 40%;
+width: 100%;
+bottom: -40%;
+background: linear-gradient( #111111ce, #adb3e9);
+}
+.box:hover .smbox{
+bottom:0;
+}
+
+.links{
+  left: 12%;
+  color: #fff;
+  transform: translate(-50%,-50%);
+  position: relative;
+  font-family: gilroy;
+  font-size: 30px;
+  top: 20px;
+  /* background-color: blue; */
+}
+.icons{
+  height:40px;
+  width: 60px;
+  /* background: red; */
+  position:relative;
+  left: 50%;
+  top: -19%;
+  font-size: 30px;
+  color: #ffff;
+  transition: 0.5s ease-in
+}
+
+.box:hover .icons{
+  left:60% ;
+}
+
+
