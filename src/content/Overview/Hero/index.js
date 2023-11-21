@@ -11,6 +11,8 @@ import style from '../Hero/style.module.css'
 import Link from 'src/components/Link';
 import Image from 'next/image';
 import { useState } from 'react';
+import axios from 'axios';
+import useRouter from 'next/router';
 
 const TypographyH1 = styled(Typography)(
   ({ theme }) => `
@@ -99,6 +101,7 @@ const NextJsAvatar = styled(Box)(
 );
 
 function Hero() {
+  const router = useRouter;
   const [username,setUsername] = useState("");
   const [password,setPassword] = useState("");
   const [email,setEmail] = useState("");
@@ -115,9 +118,11 @@ function Hero() {
     }
 
     try {
-      const response = await axios.post('/api/login', {username, password }); //enter backend api url to get loggin access
-      const token = response.data.token;
-
+      const response = await axios.post('http://localhost:8080/api/login/', {username, email, password }); //enter backend api url to get loggin access
+      const data = response.data.user;
+      // const token = response.data.token;
+      // router.push('/dashboards/home', data)  
+      console.log(data);
     } catch (error) {
       console.error('Login failed', error);
       setError('Invalid username or password.');

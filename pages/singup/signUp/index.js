@@ -15,12 +15,13 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
+import axios from 'axios';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.primary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="#">
        Fast Credit Deal
       </Link>{' '}
       {new Date().getFullYear()}
@@ -32,35 +33,74 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUp() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-   const [password,setPassword] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [email, setEmail] = useState("");
+  //  const [password,setPassword] = useState("");
+  const [data, setData] = useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    email: "",
+    password: "",
+    mobilenumber: "",
+    address: "",
+    city: "",
+    state: "",
+  });
   const [error, setError] = useState("");
-  
+  const [confirmPass, setconfirmPass] = useState(true)
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if(!username||!email||!password){
-      setError("all fields are required");
-      return;
-    }
-    try {
-       const response = await axios.post('/api/signUp',{username,password,email})//enter backend api url to get loggin access
-       const token = response.data.token;
-      
-    } catch (error) {
-      console.error('register failed',error);
-      setError('Invalid username or password')
-      
-    }
-    
-    const data = new FormData(e.current.target);
-    console.log({
-      email: data.get('email'),
-      username:data.get('username'),
-      password: data.get('password'),
-    });
+  const handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+    // console.log(e.target.value);
   };
+
+  const signUp = async () =>{
+
+     try {
+      const response = await axios.post('http://localhost:8080/api/signup/', {firstname,
+    lastname,
+    username,
+    email,
+    password,
+    mobilenumber,
+    address,
+    city,
+    state}); 
+      const respData = response.data.user;
+      // const token = response.data.token;
+      // router.push('/dashboards/home', respData)  
+      console.log(respData);
+
+    } catch (error) {
+      console.error('Signup failed', error);
+      setError('All fields are mendate.');
+    }
+  };
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    data.password !== data.confirmpass ? signUp(data) : setconfirmPass(false)
+    
+  }
+
+
+  const resetForm = (e)=>{
+    setconfirmPass(true)
+    setData({
+    firstname: "",
+    lastname: "",
+    username: "",
+    email: "",
+    password: "",
+    mobilenumber: "",
+    address: "",
+    city: "",
+    state: "",
+    })
+  };
+
+
 
   return (
     <div className={style.mbox}>
@@ -90,25 +130,26 @@ export default function SignUp() {
               <Grid container spacing={2}>
                 <Grid item xs={10} sm={5}>
                   <TextField
-                    autoComplete="given-name"
-                    name="firstName"
-                    onChange={(e)=>setUsername(e.target.value) }
                     required
                     fullWidth
-                    id="firstName"
-                    label="First Name"
-                    autoFocus
+                    id="firstname"
+                    label="Firstname"
+                    name="firstname"
+                    autoComplete="first-name"
+                    value= {data.firstname}
+                    onChange={handleChange}
                   />
                 </Grid>
                 <Grid item xs={12} sm={5}>
                   <TextField
                     required
                     fullWidth
-                    onChange={(e)=>setUsername(e.target.value) }
-                    id="lastName"
-                    label="Last Name"
-                    name="lastName"
-                    autoComplete="family-name"
+                    id="lastname"
+                    label="Lastname"
+                    name="lastname"
+                    autoComplete="last-name"
+                    value= {data.lastname}
+                    onChange={handleChange}
                   />
                 </Grid>
                 <Grid item xs={12} sm={12}>
@@ -119,6 +160,8 @@ export default function SignUp() {
                     label="Username"
                     name="username"
                     autoComplete="user-name"
+                    value= {data.username}
+                    onChange={handleChange}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -129,6 +172,8 @@ export default function SignUp() {
                     label="Email Address"
                     name="email"
                     autoComplete="email"
+                    value= {data.email}
+                    onChange={handleChange}
                   />
                 </Grid>
                 <Grid item xs={12} sm={12}>
@@ -138,7 +183,10 @@ export default function SignUp() {
                     id="password"
                     label="password"
                     name="password"
+                    type='password'
                     autoComplete="password"
+                    value= {data.password}
+                    onChange={handleChange}
                   />
                 </Grid>
 
@@ -146,22 +194,12 @@ export default function SignUp() {
                   <TextField
                     required
                     fullWidth
-                    name="confirmPassword"
-                    label="Confirm password"
-                    type="password"
-                    id="password"
-                    autoComplete="new-password"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    fullWidth
-                    name="mobileNumber"
-                    label="Mobile-Number"
-                    type="string"
-                    id="mobile"
-                    autoComplete="MobileNumber"
+                    id="mobilenumber"
+                    label="Mobile Number"
+                    name="mobilenumber"
+                    autoComplete="mobilenumber"
+                    value= {data.mobilenumber}
+                    onChange={handleChange}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -170,9 +208,10 @@ export default function SignUp() {
                     fullWidth
                     name="address"
                     label="Permanent Address"
-                    type="string"
                     id="address"
                     autoComplete="address"
+                    value= {data.address}
+                    onChange={handleChange}
                   />
                 </Grid>
                 <Grid item xs={12} sm={5}>
@@ -183,6 +222,8 @@ export default function SignUp() {
                     label="City"
                     name="city"
                     autoComplete="city-name"
+                    value= {data.city}
+                    onChange={handleChange}
                   />
                 </Grid>
                 <Grid item xs={12} sm={5}>
@@ -193,6 +234,8 @@ export default function SignUp() {
                     label="State"
                     name="state"
                     autoComplete="state-name"
+                    value= {data.state}
+                    onChange={handleChange}
                   />
                 </Grid>
 

@@ -1,10 +1,16 @@
 import { Typography, Avatar, Grid, useTheme } from '@mui/material';
 
-function PageHeader() {
+function PageHeader(data) {
+
+  console.log(data);
   const user = {
-    name: 'Numan Nezami',
+    name: `${data.username}`,
     avatar: '/static/images/avatars/4.jpg'
-  };
+  }
+  // const user = {
+  //   name: 'Numan Nezami',
+  //   avatar: '/static/images/avatars/4.jpg'
+  // };
   const theme = useTheme();
 
   return (
