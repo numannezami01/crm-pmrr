@@ -16,6 +16,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function Copyright(props) {
   return (
@@ -33,10 +34,8 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUp() {
-  // const [username, setUsername] = useState("");
-  // const [email, setEmail] = useState("");
-  //  const [password,setPassword] = useState("");
-  const [data, setData] = useState({
+  const router = useRouter();
+  const [details, setDetails] = useState({
     firstname: "",
     lastname: "",
     username: "",
@@ -48,46 +47,37 @@ export default function SignUp() {
     state: "",
   });
   const [error, setError] = useState("");
-  const [confirmPass, setconfirmPass] = useState(true)
+  // const [confirmPass, setconfirmPass] = useState(true)
 
   const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    setDetails({ ...details, [e.target.name]: e.target.value });
     // console.log(e.target.value);
   };
 
-  const signUp = async () =>{
 
-     try {
-      const response = await axios.post('http://localhost:8080/api/signup/', {firstname,
-    lastname,
-    username,
-    email,
-    password,
-    mobilenumber,
-    address,
-    city,
-    state}); 
-      const respData = response.data.user;
-      // const token = response.data.token;
-      // router.push('/dashboards/home', respData)  
+
+  const handleSubmit = async(e)=>{
+    e.preventDefault();
+    setDetails({ ...details, [e.target.name]: e.target.value });
+ try {
+      const response = await axios.post('http://localhost:8080/api/signup/', {details}); 
+      const respData = response.data;
+      router.push('/dashboards/home', respData)  
       console.log(respData);
 
     } catch (error) {
       console.error('Signup failed', error);
       setError('All fields are mendate.');
     }
-  };
 
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-    data.password !== data.confirmpass ? signUp(data) : setconfirmPass(false)
+    // data.password !== data.confirmpass ? signUp(data) : setconfirmPass(false)
     
   }
 
 
   const resetForm = (e)=>{
     setconfirmPass(true)
-    setData({
+    setDetails({
     firstname: "",
     lastname: "",
     username: "",
@@ -132,11 +122,12 @@ export default function SignUp() {
                   <TextField
                     required
                     fullWidth
+                    type='text'
                     id="firstname"
                     label="Firstname"
                     name="firstname"
                     autoComplete="first-name"
-                    value= {data.firstname}
+                    value= {details.firstname}
                     onChange={handleChange}
                   />
                 </Grid>
@@ -144,11 +135,12 @@ export default function SignUp() {
                   <TextField
                     required
                     fullWidth
+                    type='text'
                     id="lastname"
                     label="Lastname"
                     name="lastname"
                     autoComplete="last-name"
-                    value= {data.lastname}
+                    value= {details.lastname}
                     onChange={handleChange}
                   />
                 </Grid>
@@ -156,11 +148,12 @@ export default function SignUp() {
                   <TextField
                     required
                     fullWidth
+                    type='text'
                     id="username"
                     label="Username"
                     name="username"
                     autoComplete="user-name"
-                    value= {data.username}
+                    value= {details.username}
                     onChange={handleChange}
                   />
                 </Grid>
@@ -168,11 +161,12 @@ export default function SignUp() {
                   <TextField
                     required
                     fullWidth
+                    type='email'
                     id="email"
                     label="Email Address"
                     name="email"
                     autoComplete="email"
-                    value= {data.email}
+                    value= {details.email}
                     onChange={handleChange}
                   />
                 </Grid>
@@ -185,7 +179,7 @@ export default function SignUp() {
                     name="password"
                     type='password'
                     autoComplete="password"
-                    value= {data.password}
+                    value= {details.password}
                     onChange={handleChange}
                   />
                 </Grid>
@@ -197,8 +191,9 @@ export default function SignUp() {
                     id="mobilenumber"
                     label="Mobile Number"
                     name="mobilenumber"
+                    type='tel'
                     autoComplete="mobilenumber"
-                    value= {data.mobilenumber}
+                    value= {details.mobilenumber}
                     onChange={handleChange}
                   />
                 </Grid>
@@ -209,8 +204,9 @@ export default function SignUp() {
                     name="address"
                     label="Permanent Address"
                     id="address"
+                    type='text'
                     autoComplete="address"
-                    value= {data.address}
+                    value= {details.address}
                     onChange={handleChange}
                   />
                 </Grid>
@@ -221,8 +217,9 @@ export default function SignUp() {
                     id="city"
                     label="City"
                     name="city"
+                    type='text'
                     autoComplete="city-name"
-                    value= {data.city}
+                    value= {details.city}
                     onChange={handleChange}
                   />
                 </Grid>
@@ -233,8 +230,9 @@ export default function SignUp() {
                     id="state"
                     label="State"
                     name="state"
+                    type='text'
                     autoComplete="state-name"
-                    value= {data.state}
+                    value= {details.state}
                     onChange={handleChange}
                   />
                 </Grid>
