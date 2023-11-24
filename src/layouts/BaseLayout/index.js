@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import { Box } from '@mui/material';
+import { AppProvider } from 'src/contexts/AuthContext';
 
 const BaseLayout = ({ children }) => {
+
+  
   return (
     <Box
       sx={{
@@ -12,6 +15,7 @@ const BaseLayout = ({ children }) => {
     >
       {children}
     </Box>
+  
   );
 };
 

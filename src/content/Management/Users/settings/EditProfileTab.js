@@ -10,8 +10,12 @@ import {
 
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import Text from 'src/components/Text';
+import { useContext } from 'react';
+import userContext from 'src/contexts/UserContext';
 
 function EditProfileTab() {
+  const {user} = useContext(userContext);
+
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
@@ -45,30 +49,18 @@ function EditProfileTab() {
                 </Grid>
                 <Grid item xs={12} sm={8} md={9}>
                   <Text color="black">
-                    <b>Numan Nezami</b>
+                    <b>{user.data.firstname} {user.data.lastname}</b>
                   </Text>
                 </Grid>
                 <Grid item xs={12} sm={4} md={3} textAlign={{ sm: 'right' }}>
                   <Box pr={3} pb={2}>
-                    Date of birth:
+                    Contact:
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={8} md={9}>
                   <Text color="black">
-                    <b>10 July 1995</b>
+                    <b>{user.data.mobilenumber}</b>
                   </Text>
-                </Grid>
-                <Grid item xs={12} sm={4} md={3} textAlign={{ sm: 'right' }}>
-                  <Box pr={3} pb={2}>
-                    Address:
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={8} md={9}>
-                  <Box sx={{ maxWidth: { xs: 'auto', sm: 300 } }}>
-                    <Text color="black">
-                      Indrapuri, Sector-A, Bhopal
-                    </Text>
-                  </Box>
                 </Grid>
                 <Grid item xs={12} sm={4} md={3} textAlign={{ sm: 'right' }}>
                   <Box pr={3} pb={2}>
@@ -76,8 +68,20 @@ function EditProfileTab() {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={8} md={9}>
+                  <Box sx={{ maxWidth: { xs: 'auto', sm: 300 } }}>
+                    <Text color="black">
+                       <b>{user.data.email}</b>
+                    </Text>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={4} md={3} textAlign={{ sm: 'right' }}>
+                  <Box pr={3} pb={2}>
+                    Address:
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={8} md={9}>
                   <Text color="black">
-                    <b>demo@example.com</b>
+                    <b>{user.data.address}</b>
                   </Text>
                 </Grid>
               </Grid>

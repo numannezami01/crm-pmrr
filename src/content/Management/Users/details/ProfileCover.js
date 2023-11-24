@@ -13,6 +13,8 @@ import { styled } from '@mui/material/styles';
 
 import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
 import UploadTwoToneIcon from '@mui/icons-material/UploadTwoTone';
+import { useContext } from 'react';
+import userContext from 'src/contexts/UserContext';
 
 const Input = styled('input')({
   display: 'none'
@@ -76,7 +78,9 @@ const CardCoverAction = styled(Box)(
 `
 );
 
-const ProfileCover = ({ user }) => {
+const ProfileCover = () => {
+  const {user} = useContext(userContext);
+
   return (
     <>
       <Box display="flex" mb={15}>
@@ -87,7 +91,7 @@ const ProfileCover = ({ user }) => {
         </Tooltip>
         <Box>
           <Typography variant="h3" component="h3" gutterBottom>
-            Profile for {user.name}
+            Profile for: {user.data.firstname} {user.data.lastname}
           </Typography>
           <Typography variant="subtitle2">
             This is a profile page.
@@ -96,7 +100,7 @@ const ProfileCover = ({ user }) => {
       </Box>
       
       <AvatarWrapper>
-        <Avatar variant="rounded" alt={user.name} src={user.avatar} />
+        <Avatar variant="rounded" alt={'avatar'} src={''} />
         <ButtonUploadWrapper>
           <Input
             accept="image/*"
@@ -113,11 +117,11 @@ const ProfileCover = ({ user }) => {
       </AvatarWrapper>
       <Box py={2} pl={2} mb={3}>
         <Typography gutterBottom variant="h4">
-          {user.name}
+          {user.data.firstname} {user.data.lastname}
         </Typography>
-        <Typography variant="subtitle2">{user.description}</Typography>
+        <Typography variant="subtitle2">{user.data.email}</Typography>
         <Typography sx={{ py: 2 }} variant="subtitle2" color="text.primary">
-          {user.jobtitle} | {user.location} | {user.followers} followers
+          {user.data.city} | {user.data.mobilenumber} | {user.data.state}
         </Typography>
         <Box
           display={{ xs: 'block', md: 'flex' }}

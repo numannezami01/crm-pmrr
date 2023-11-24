@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import createEmotionCache from 'src/createEmotionCache';
 import { SidebarProvider } from 'src/contexts/SidebarContext';
+import {AuthProvider} from 'src/contexts/AuthContext.js'
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
@@ -21,14 +22,16 @@ function TokyoApp(props) {
   Router.events.on('routeChangeComplete', nProgress.done);
 
   return (
+  <AuthProvider>
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Tokyo Free White NextJS Javascript Admin Dashboard</title>
+        <title>FCD-Fast Credit Deal</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
       </Head>
+
       <SidebarProvider>
         <ThemeProvider>
           <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -38,6 +41,7 @@ function TokyoApp(props) {
         </ThemeProvider>
       </SidebarProvider>
     </CacheProvider>
+    </AuthProvider>
   );
 }
 

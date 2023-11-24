@@ -9,15 +9,7 @@ import Head from 'next/head';
 
 import Hero from 'src/content/Overview/Hero';
 
-const HeaderWrapper = styled(Card)(
-  ({ theme }) => `
-  width: 100%;
-  display: flex;
-  align-items: center;
-  height: ${theme.spacing(10)};
-  margin-bottom: ${theme.spacing(10)};
-`
-);
+
 
 const OverviewWrapper = styled(Box)(
   ({ theme }) => `

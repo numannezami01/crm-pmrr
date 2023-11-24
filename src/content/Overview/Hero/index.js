@@ -2,116 +2,33 @@
 import {
   Box,
   Button,
-  Container,
-  Grid,
-  Typography,
-  styled
 } from '@mui/material';
 import style from '../Hero/style.module.css'
 import Link from 'src/components/Link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import userContext from 'src/contexts/UserContext';
 
-const TypographyH1 = styled(Typography)(
-  ({ theme }) => `
-    font-size: ${theme.typography.pxToRem(50)};
-`
-);
-
-const TypographyH2 = styled(Typography)(
-  ({ theme }) => `
-    font-size: ${theme.typography.pxToRem(17)};
-`
-);
-
-const LabelWrapper = styled(Box)(
-  ({ theme }) => `
-    background-color: ${theme.colors.success.main};
-    color: ${theme.palette.success.contrastText};
-    font-weight: bold;
-    border-radius: 30px;
-    text-transform: uppercase;
-    display: inline-block;
-    font-size: ${theme.typography.pxToRem(11)};
-    padding: ${theme.spacing(0.5)} ${theme.spacing(1.5)};
-    margin-bottom: ${theme.spacing(2)};
-`
-);
-
-const MuiAvatar = styled(Box)(
-  ({ theme }) => `
-    width: ${theme.spacing(8)};
-    height: ${theme.spacing(8)};
-    border-radius: ${theme.general.borderRadius};
-    background-color: #e5f7ff;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto ${theme.spacing(2)};
-
-    img {
-      width: 60%;
-      height: 60%;
-      display: block;
-    }
-`
-);
-
-const JsAvatar = styled(Box)(
-  ({ theme }) => `
-    width: ${theme.spacing(8)};
-    height: ${theme.spacing(8)};
-    border-radius: ${theme.general.borderRadius};
-    background-color: #dfebf6;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto ${theme.spacing(2)};
-
-  img {
-    width: 60%;
-    height: 60%;
-    display: block;
-  }
-`
-);
-
-const NextJsAvatar = styled(Box)(
-  ({ theme }) => `
-  width: ${theme.spacing(8)};
-  height: ${theme.spacing(8)};
-  border-radius: ${theme.general.borderRadius};
-  background-color: #dfebf6;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto ${theme.spacing(2)};
-
-    img {
-      width: 60%;
-      height: 60%;
-      display: block;
-    }
-`
-);
 
 function Hero() {
+
+
   const router = useRouter();
   const [username,setUsername] = useState("");
   const [password,setPassword] = useState("");
   const [email,setEmail] = useState("");
   const [error, setError] = useState('');
-  // const [users,setUsers] = useState([]);
-  
 
+  const {setUser} = useContext(userContext)
+
+
+  
   const handleLogin = async (e) => {
      e.preventDefault();
 
+    
     if (!username || !password||!email) {
       setError('All fields are required.');
       return;
@@ -120,8 +37,10 @@ function Hero() {
     try {
       const response = await axios.post('http://localhost:8080/api/login/', {username, email, password }); //enter backend api url to get loggin access
       const data = response.data.user;
-      router.push('/dashboards/home', data)  
-      // console.log(data);
+      // isLoggedIn(true);
+      setUser({data});
+      router.push('/dashboards/home')  
+      console.log(data);
     } catch (error) {
       console.error('Login failed', error);
       setError('Invalid username or password.');
@@ -148,16 +67,7 @@ function Hero() {
           </form>
             <Link className= {style.forgot} href="/forget/forgetPass">Forgot password?</Link>
             <Link className= {style.singup} href="/singup/signUp">SignUp</Link>
-            <Box className= {style.dash}> 
-            <Button
-                  component={Link}
-                  href="/dashboards/home"
-                  variant="contained"
-                  sx={{ ml: 2 }}
-                >
-                  Preview Dashboard
-                </Button>
-              </Box>
+           
         </div>
        </div>
 

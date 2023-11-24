@@ -1,12 +1,11 @@
 import { Typography, Avatar, Grid, useTheme } from '@mui/material';
+import { green } from '@mui/material/colors';
+import { useContext } from 'react';
+import userContext from 'src/contexts/UserContext';
 
-function PageHeader(data) {
-
-  console.log(data);
-  const user = {
-    name: `${data.username}`,
-    avatar: '/static/images/avatars/4.jpg'
-  }
+function PageHeader() {
+  const {user} = useContext(userContext);
+  // console.log(user.data);
   // const user = {
   //   name: 'Numan Nezami',
   //   avatar: '/static/images/avatars/4.jpg'
@@ -23,13 +22,13 @@ function PageHeader(data) {
             height: theme.spacing(8)
           }}
           variant="rounded"
-          alt={user.name}
-          src={user.avatar}
+          alt={user.data.firstname} 
+          // src={user.data.avatar}
         />
       </Grid>
       <Grid item>
         <Typography variant="h3" component="h3" gutterBottom>
-          Welcome to FCD, {user.name} !
+          Welcome to FCD, <span style={{textTransform: 'capitalize', opacity:'.9'}}> {user.data.firstname} {user.data.lastname} </span>!
         </Typography>
         <Typography variant="subtitle2">
           Designation: Full Stack Developer

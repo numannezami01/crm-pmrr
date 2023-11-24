@@ -1,6 +1,182 @@
-  .mbox{
-    height: 100%;
-    width: 100%;
-    background-image: url("https://unsplash.com/photos/blue-wallpaper-XZ0xN0hmpi4");
-    background-size: cover;
-  }
+.main {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #abc7e4 0%, #3d9ffa 100%);
+}
+
+
+
+
+.formdiv {
+  position: relative;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 550px;
+  width: 43rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.grid{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.h2 {
+  position: relative;
+  top: -50px;
+  color: black;
+  text-transform: capitalize;
+  font-family: sans-serif;
+}
+.op{
+  color: navy;
+}
+
+.inputs {
+  position: relative;
+  display: block;
+  margin: 5px;
+  height: 40px;
+  width: 320px;
+  outline: none;
+  top: -40px;
+  left: -10px;
+  font-size: 15px;
+  padding: 5px 10px;
+  transition: .1s ease-in-out;
+  box-shadow: 0 20px 5px 3px 0 rgba(218, 216, 216, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
+  border: 1px solid rgb(236, 234, 234);
+}
+.inputs:hover {
+  box-shadow: 0px 10px 10px rgba(154, 151, 151, 0.483);
+}
+.address {
+  position: relative;
+  display: block;
+  margin: 5px;
+  height: 40px;
+  width: 98%;
+  outline: none;
+  top: -40px;
+  left: -10px;
+  font-size: 15px;
+  padding: 5px 10px;
+  transition: .1s ease-in-out;
+  box-shadow: 0 20px 5px 3px 0 rgba(218, 216, 216, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
+  border: 1px solid rgb(236, 234, 234);
+}
+.button {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  font-family: sans-serif;
+  transition: .2s ease-in-out;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin: 0px 0 30px 0;
+  cursor: pointer;
+  background-color: rgba(0, 128, 0, 0.464);
+  box-shadow: 0 5px 32px 0 rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+.button:hover {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.text {
+  position: absolute;
+  z-index: 9999;
+  height: 60px;
+  width: 250px;
+  bottom: 80%;
+  /* background-color: red; */
+}
+
+.text>h3 {
+  text-align: left;
+  text-transform: capitalize;
+  font-family: sans-serif;
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.forgot {
+  position: absolute;
+  text-transform: capitalize;
+  color: black;
+  height: 20px;
+  right: 63%;
+  top: 70%;
+  text-decoration: none;
+  font-family: gilroy;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: sans-serif;
+  color: blue;
+}
+
+.forgot:hover {
+  color: royalblue;
+}
+
+.dash {
+  position: absolute;
+  text-transform: capitalize;
+  color: black;
+  height: 20px;
+  right: 30%;
+  top: 80%;
+  text-decoration: none;
+  font-family: gilroy;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: sans-serif;
+  color: rgb(0, 128, 66);
+}
+
+.dash:hover {
+  color: rgb(1, 39, 22);
+}
+
+.singin {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-family: gilroy;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: sans-serif;
+  color: blue;
+}
+
+.redi{
+display: flex;
+  align-items: center;
+  justify-content: center;
+}

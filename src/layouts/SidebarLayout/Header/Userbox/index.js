@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 
 import NextLink from 'next/link';
 
@@ -16,12 +16,12 @@ import {
   Typography
 } from '@mui/material';
 
-import InboxTwoToneIcon from '@mui/icons-material/InboxTwoTone';
 import { styled } from '@mui/material/styles';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
+import userContext from 'src/contexts/UserContext';
 
 const UserBoxButton = styled(Button)(
   ({ theme }) => `
@@ -59,11 +59,12 @@ const UserBoxDescription = styled(Typography)(
 );
 
 function HeaderUserbox() {
-  const user = {
-    name: 'Numan Nezami',
-    avatar: '/static/images/avatars/4.jpg',
-    jobtitle: 'Full Stack Developer'
-  };
+  const {user} = useContext(userContext)
+  // const user = {
+  //   name: `Numan Nezami`,
+  //   avatar: '/static/images/avatars/4.jpg',
+  //   jobtitle: 'Full Stack Developer'
+  // };
 
   const ref = useRef(null);
   const [isOpen, setOpen] = useState(false);
@@ -79,12 +80,12 @@ function HeaderUserbox() {
   return (
     <>
       <UserBoxButton color="secondary" ref={ref} onClick={handleOpen}>
-        <Avatar variant="rounded" alt={user.name} src={user.avatar} />
+        <Avatar variant="rounded" alt={user.data.firstname} src={''} />
         <Hidden mdDown>
           <UserBoxText>
-            <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
+            <UserBoxLabel variant="body1"><span style={{textTransform: 'capitalize', color: '#F3C50C'}}> {user.data.firstname} {user.data.lastname} </span></UserBoxLabel>
             <UserBoxDescription variant="body2">
-              {user.jobtitle}
+              {user.data.city}
             </UserBoxDescription>
           </UserBoxText>
         </Hidden>
@@ -106,11 +107,11 @@ function HeaderUserbox() {
         }}
       >
         <MenuUserBox sx={{ minWidth: 210 }} display="flex">
-          <Avatar variant="rounded" alt={user.name} src={user.avatar} />
+          <Avatar variant="rounded" alt={user.data.firstname} src={''} />
           <UserBoxText>
-            <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
+            <UserBoxLabel variant="body1"><span style={{textTransform: 'capitalize', color: 'Black'}}> {user.data.firstname} {user.data.lastname} </span></UserBoxLabel>
             <UserBoxDescription variant="body2">
-              {user.jobtitle}
+              {user.data.city}
             </UserBoxDescription>
           </UserBoxText>
         </MenuUserBox>
