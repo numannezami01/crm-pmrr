@@ -2,7 +2,7 @@ import Head from 'next/head';
 import SidebarLayout from 'src/layouts/SidebarLayout';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import style from "./style.module.css";
+
 import {
   Container,
 } from '@mui/material';
@@ -15,7 +15,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import PersonIcon from '@mui/icons-material/Person';
 import AddIcon from '@mui/icons-material/Add';
-import {blue} from '@mui/material/colors';
+import { blue } from '@mui/material/colors';
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
@@ -88,16 +88,13 @@ function Modals() {
   return (
     <>
       <Head>
-        <title>knowlege bank fcd</title>
+        <title>HR Policies - FCD</title>
       </Head>
+      
       <Container maxWidth="lg">
-        <div className={style.main}>
-          <div className={style.nav}>
-            <h1 className={style.h2}>FCD catogories</h1>
-          </div>
-          <hr />
-        <div className={style.photos}></div>
-        </div>
+        <h3>
+            employee details
+        </h3>
       </Container>
     </>
   );

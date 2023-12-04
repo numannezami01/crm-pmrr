@@ -51,8 +51,8 @@ function Status404() {
 
           <Container maxWidth="md">
             <Box textAlign="center">
-              <Image priority alt="Success" height={180} width={180} src="/success.svg" />
-              <Typography variant="h2" sx={{ my: 2 }}>
+              <Image priority alt="Success" height={150} width={150} src="/success.svg" />
+              <Typography variant="h2" sx={{ my: "2" }}>
                 Registration Successful!
               </Typography>
              

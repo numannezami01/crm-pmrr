@@ -1,0 +1,411 @@
+.main{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+}
+.nav{
+    position: relative;
+    padding: 10px 30px;
+    height: 60px;
+    width: 100%;
+    /* background-color: red; */
+    background-color: #272731;
+}
+.img{
+    position: relative;
+    /* top: 10px; */
+
+}
+.hungry{
+    position: relative;
+    display: flex;
+    height: 550px;
+    width: 100%;
+    /* bottom: 30px; */
+    background-color: #272731;
+    clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 41%, 100% 67%, 71% 74%, 45% 77%, 23% 91%, 0 100%);
+}
+.hungrydiv{
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    top: 30px;
+    left: 100px;
+    height: 350px;
+    width: 600px;
+    /* background-color: aqua; */
+}
+.areyou{
+    position: relative;
+    text-align: left;
+    height: 200px;
+    width: 500px;
+    /* background-color: red; */
+}
+.h5{
+    position: relative;
+    font-size: 5vh;
+    top: -20px;
+    left: 10px;
+    font-family:Delirium;
+    font-weight: 600;
+    color: #ffff;
+}
+.h2{
+    position: relative;
+    font-size: 120px;
+    color: #FFB205;
+    font-family: gilroy;
+    bottom: 160px;
+}
+ .para{
+    position: relative;
+    height: 60px;
+    width: 400px;
+    bottom: 15px;
+    /* background-color: blue; */
+}
+.p{
+    position: relative;
+    font-family: gilroy;
+    font-weight: 600;
+    font-size: 20px;
+    width:300px;
+    color: #ffffffb3;
+}
+.buttondiv{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    width: 300px;
+    bottom: 5px;
+    left: 2px;
+    /* background-color: chartreuse; */
+}
+.btn{
+    position: relative;
+    text-transform: capitalize;
+    border: none;
+    font-size: 14px;
+    color: #ffff;
+    outline: none;
+    height: 40px;
+    width: 120px;
+    border-radius: 15px;
+    background-color: #FFB205;
+    transition: 0.2s ease-in;
+}
+.btn:hover{
+color:  black;
+cursor: pointer;
+}
+.btn2{
+    position: relative;
+    text-transform: capitalize;
+    border:2px solid #FFB205;
+    font-size: 14px;
+    color: #ffff;
+    outline: none;
+    height: 40px;
+    width: 120px;
+    border-radius: 15px;
+    background-color:transparent;
+    transition: 0.2s ease-in;
+
+}
+.btn2:hover{
+    background-color: #FFB205;
+    cursor: pointer;
+    color: black;
+}
+.scooty{
+    position: relative;
+   left: 70px;
+    height: 60vh;
+    width: 40vw;
+    /* background-color: chartreuse; */
+}
+.imgg{
+    position: relative;
+    top: 2px;
+}
+.menu{
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    background-color: #F2F5F9;
+}
+.topmenu{
+    position: relative;
+    text-transform: capitalize;
+    left: 70px;
+    height: 15vh;
+    width:30vw;
+    /* background-color: red; */
+}
+
+.h3{
+    position: relative;
+    font-family: gilroy;
+    font-size: 50px;
+}
+
+.span{
+    position: relative;
+    font-size: 55px;
+    color: #FFB205;;
+}
+.recdiv{
+    position: relative;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    left: 5%;
+    height: 55vh;
+    width: 90vw;
+    /* background-color: red; */
+}
+.recdiv::-webkit-scrollbar{
+    display: none;
+}
+.box{
+    position: relative;
+     border-radius: 5px;
+    display: inline-block;
+    /* height: 320px; */
+    width: 300px;
+    background-color:#FFFFFF;
+    margin: 10px
+}
+.photos{
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 5px;
+    height: 200px;
+    width: 300px;
+    /* background-color: #FFB205; */
+}
+.middle{
+    position: relative;
+    height: 80px;
+    line-height: 1;
+    width: 20px;
+   /* background-color: blue; */
+} 
+.silroin{
+    position: relative;
+    font-size: 24px;
+    bottom: 5px;
+}
+.strek{
+    position: relative;
+    bottom: 14px;
+}
+.easy{
+    position: relative;
+    bottom: 30px;
+}
+.last{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 35px;
+    width: 100%;
+    /* background-color:yellow; */
+}
+.spann{
+   position: relative;
+   color: red;
+}
+.btnnn{
+    position: relative;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    background-color:#FFB205; 
+    border: none;
+    transition: 0.2s ease-in-out
+}
+
+.btnnn:hover{
+    background-color: green;
+    cursor: pointer;
+    color: white;
+}
+
+.surprize{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color:#F2F5F9;
+}
+.burger{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 85vh;
+    width: 90vw;
+    background-color:#343136;
+}
+.lefts{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    top: 8%;
+    left: 5%;
+    height: 70vh;
+    width: 40vw;
+    /* background-color: red; */
+}
+.lefts>h2{
+    position: relative;
+    color: #ffff;
+    font-family: gilroy;
+    font-size: 40px;
+}
+.lefts>h1{
+    position: relative;
+    color: #FFB205;
+    font-family: gilroy;
+    font-size: 60px;
+    bottom: 20%;
+}
+.lefts>p{
+    position: relative;
+    font-family: gilroy;
+    color: #ffffffd5;
+    text-align: center;
+    font-size: 17px;
+    width: 410px;
+    bottom: 30%;
+}
+ 
+.order{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    width: 400px;
+    /* background-color: chartreuse; */
+    bottom: 25%;
+}
+.doller{
+    position: relative;
+    color: blanchedalmond;
+    font-size: 30px;
+}
+.h4{
+    position: relative;
+    font-size: 70px;
+    color: #FFB205;
+    
+    
+}
+
+.button{
+    position: relative;
+    height: 35px;
+    width: 140px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    text-transform: capitalize;
+    transition: 0.3s ease-in-out;
+}
+ .button:hover{
+    background-color: green;
+    color:#ffff;
+    cursor: pointer;
+ }
+
+.rightb{
+    position: relative;
+    height: 70vh;
+    width: 40vw;
+    bottom: 10%;
+    /* background-color: red; */
+}
+
+.page4{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.ourmenu{
+    position: relative;
+    left: 33%;
+    height: 130px;
+   width: 500px;
+   /* background-color: aqua; */
+
+}
+.h1{
+    position: relative;
+    text-align: center;
+    font-size: gilroy;
+    text-transform: capitalize;
+    font-size: 40px;
+    font-weight: 600;
+}
+.spanmenu{
+    position: relative;
+    font-size: 44px;
+    color: #FFB205;
+    font-family: gilroy;
+    font-weight: 600;
+
+}
+.ourmenu>p{
+    position: relative;
+    font-family: gilroy;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 450px;
+    line-height: 1;
+    bottom: 9%;
+    left: 5%;
+}
+.menudiv{
+    position: relative;
+    width: 90vw;
+    /* white-space: nowrap; */
+    /* overflow-y: hidden; */
+    /* overflow-x: auto; */
+    left: 5%;
+    /* height: 55vh; */
+    /* background-color: red; */
+}
+.menuboxx{
+    position: relative;
+    border-radius: 5px;
+   display: inline-block;
+   left: 12%;
+   /* height: 320px; */
+   width: 300px;
+   background-color:#FFFFFF;
+   margin: 10px
+}
+.srvices{
+    position: relative;
+
+}

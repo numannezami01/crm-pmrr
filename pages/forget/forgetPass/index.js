@@ -1,4 +1,7 @@
+"use client"
 import * as React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,21 +13,53 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import style from "./style.module.css"
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';  
 
 
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+export default function resetpassword() {
+  
+  const calll = () => toast("link send to Email"); 
+
+
+  const router = useRouter();
+  const { token } = router.query;
+  const [email, setEmail] = useState("");
+  
+  
+
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    try {
+      console.log( "heloo")
+      const response = await axios.get('http://localhost:9997/forgotpassword');
+      const respData = response.data;
+      console.log(respData);
+    if (response.ok){
+      console.log('Password reset successful');
+      alert("Password reset email sent! Check your inbox.")
+      router.push('/', respData)  
+      }
+     else{
+      console.error('Failed to reset password');
+   }
+  }
+    catch (error) {
+      // alert('reset failed')
+      console.error('reset failed', error);
+      // setError('All fields are mendate.'); 
+      
+    }
+     
+    };
+  
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -54,16 +89,20 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            
+              
             <Button
+              onClick={calll}
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-            >
-              Reset
+              >
+             send link 
             </Button>
+           
             <Grid container>
               <Grid sx={{ml:13}} item xs>
                 <Link href="/" variant="body2">

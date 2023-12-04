@@ -1,24 +1,23 @@
 import Head from 'next/head';
 import SidebarLayout from 'src/layouts/SidebarLayout';
-
 import {
   Container,
 } from '@mui/material';
 
-function Accordions() {
+function Buttons() {
   return (
     <>
       <Head>
-        <title>salesDashboard</title>
+        <title>R&R</title>
       </Head>
       
       <Container maxWidth="lg">
-        <h3>salesDashboard  </h3>
+        <h3>R&R</h3>
       </Container>
     </>
   );
 }
 
-Accordions.getLayout = (page) => <SidebarLayout>{page}</SidebarLayout>;
+Buttons.getLayout = (page) => <SidebarLayout>{page}</SidebarLayout>;
 
-export default Accordions;
+export default Buttons;

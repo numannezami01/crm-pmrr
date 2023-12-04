@@ -12,11 +12,11 @@ import { useRouter } from 'next/router';
 import userContext from 'src/contexts/UserContext';
 
 
-function Hero() {
+function singin() {
 
 
   const router = useRouter();
-  const [username,setUsername] = useState("");
+  const [userName,setUsername] = useState("");
   const [password,setPassword] = useState("");
   const [email,setEmail] = useState("");
   const [error, setError] = useState('');
@@ -29,13 +29,13 @@ function Hero() {
      e.preventDefault();
 
     
-    if (!username || !password||!email) {
+    if (!userName || !password || !email) {
       setError('All fields are required.');
       return;
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/api/login/', {username, email, password }); //enter backend api url to get loggin access
+      const response = await axios.post('http://localhost:9997/regFCD/loginUser', {userName,  password ,email }); //enter backend api url to get loggin access
       const data = response.data.user;
       // isLoggedIn(true);
       setUser({data});
@@ -59,8 +59,8 @@ function Hero() {
           </div>
           <form onSubmit={handleLogin} >
             <h2 className={style.h2}>sign in</h2>
-            <input autoComplete='current-username' className={style.input1}  onChange={(e)=>setUsername(e.target.value) }  type="text" name='username' placeholder='username' />
-            <input autoComplete='current-email' className={style.input3}  onChange={(e)=>setEmail(e.target.value) }  type="text" name='email' placeholder='Email' />
+            <input autoComplete='current-username' className={style.input1}  onChange={(e)=>setUsername(e.target.value) }  type="text" name='userName' placeholder='username' />
+            <input autoComplete='current-password' className={style.input3}  onChange={(e)=>setEmail(e.target.value) } type="email" name='email' placeholder='Email' />
             <input autoComplete='current-password' className={style.input2}  onChange={(e)=>setPassword(e.target.value) } type="password" name='password' placeholder='password' />
              {error && <p style={{ color: 'red' }}>{error}</p>}
             <button className={style.button}>Log In</button>
@@ -76,4 +76,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default singin;

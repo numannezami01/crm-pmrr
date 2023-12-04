@@ -27,6 +27,7 @@ const ListWrapper = styled(Box)(
                 .MuiListItemText-root {
                     .MuiTypography-root {
                         &:before {
+                          
                             height: 4px;
                             width: 22px;
                             opacity: 0;
@@ -37,7 +38,7 @@ const ListWrapper = styled(Box)(
                             transition: all .2s;
                             border-radius: ${theme.general.borderRadiusLg};
                             content: "";
-                            background: ${theme.colors.primary.main};
+                            // background: ${theme.colors.primary.main};
                         }
                     }
                 }
@@ -46,7 +47,7 @@ const ListWrapper = styled(Box)(
                 &:active,
                 &:hover {
                 
-                    background: transparent;
+                    // background: transparent;
                 
                     .MuiListItemText-root {
                         .MuiTypography-root {
@@ -99,6 +100,19 @@ function HeaderMenu() {
               primary="knowledge Bank"
             />
           </ListItem>
+
+          
+          <ListItem
+            classes={{ root: 'MuiListItem-indicators' }}
+            button
+            component={Link}
+            href="https://homeloans.sbi/getcibil"
+          >
+            <ListItemText
+              primaryTypographyProps={{ noWrap: true }}
+              primary="SBI CIBIL"
+            />
+          </ListItem>
           
           <ListItem
             classes={{ root: 'MuiListItem-indicators' }}
@@ -139,10 +153,10 @@ function HeaderMenu() {
           India Payroll
         </MenuItem>
         <MenuItem  sx={{ px: 3 }} component={Link} href="/components/exitReq">
-          Blog
+          request existing
         </MenuItem>
-        <MenuItem  sx={{ px: 3 }} component={Link} href="/components/salesDashboard">
-          Goldmine
+        <MenuItem  sx={{ px: 3 }} component={Link} href="/components/r&r">
+          R&R
         </MenuItem>
       </Menu>
       

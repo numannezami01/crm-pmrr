@@ -1,3 +1,4 @@
+"use client"
 import { useContext, useRef, useState } from 'react';
 
 import NextLink from 'next/link';
@@ -59,12 +60,15 @@ const UserBoxDescription = styled(Typography)(
 );
 
 function HeaderUserbox() {
-  const {user} = useContext(userContext)
-  // const user = {
-  //   name: `Numan Nezami`,
-  //   avatar: '/static/images/avatars/4.jpg',
-  //   jobtitle: 'Full Stack Developer'
-  // };
+  // const {user} = useContext(userContext)
+  const user = {
+    firstname:"mayank ",
+    lastname:"gupta",
+    email:"numannezami217@gmail.com",
+    city:"delhi",
+    state:"delhi",
+    mobilenumber:"9934430822",
+  };
 
   const ref = useRef(null);
   const [isOpen, setOpen] = useState(false);
@@ -80,12 +84,12 @@ function HeaderUserbox() {
   return (
     <>
       <UserBoxButton color="secondary" ref={ref} onClick={handleOpen}>
-        <Avatar variant="rounded" alt={user.data.firstname} src={''} />
+        <Avatar variant="rounded" alt={user.firstname} src={''} />
         <Hidden mdDown>
           <UserBoxText>
-            <UserBoxLabel variant="body1"><span style={{textTransform: 'capitalize', color: '#F3C50C'}}> {user.data.firstname} {user.data.lastname} </span></UserBoxLabel>
+            <UserBoxLabel variant="body1"><span style={{textTransform: 'capitalize', color: '#F3C50C'}}> {user.firstname} {user.lastname} </span></UserBoxLabel>
             <UserBoxDescription variant="body2">
-              {user.data.city}
+              {user.city}
             </UserBoxDescription>
           </UserBoxText>
         </Hidden>
@@ -107,11 +111,11 @@ function HeaderUserbox() {
         }}
       >
         <MenuUserBox sx={{ minWidth: 210 }} display="flex">
-          <Avatar variant="rounded" alt={user.data.firstname} src={''} />
+          <Avatar variant="rounded" alt={user.firstname} src={''} />
           <UserBoxText>
-            <UserBoxLabel variant="body1"><span style={{textTransform: 'capitalize', color: 'Black'}}> {user.data.firstname} {user.data.lastname} </span></UserBoxLabel>
+            <UserBoxLabel variant="body1"><span style={{textTransform: 'capitalize', color: 'Black'}}> {user.firstname} {user.lastname} </span></UserBoxLabel>
             <UserBoxDescription variant="body2">
-              {user.data.city}
+              {user.city}
             </UserBoxDescription>
           </UserBoxText>
         </MenuUserBox>

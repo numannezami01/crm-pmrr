@@ -362,7 +362,7 @@ function SidebarMenu() {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
-                    <Typography>Performance Tracking</Typography>
+                    <Typography>IT manager</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <NextLink href="/components/salesDashboard" passHref>
@@ -403,17 +403,17 @@ function SidebarMenu() {
                   </AccordionSummary>
                   <AccordionDetails>
                     {/* HR policies */}
-                   <NextLink href="/components/hrPolicies" passHref>
+                   <NextLink href="/components/employeedetails" passHref>
                   <Button
                     className={
-                      currentRoute === '/components/hrPolicies' ? 'active' : ''
+                      currentRoute === '/components/employeedetails' ? 'active' : ''
                     }
                     disableRipple
                     component="a"
                     onClick={closeSidebar}
                     startIcon={<BeachAccessTwoToneIcon />}
                   >
-                    HR Policies
+                    employe details
                   </Button>
                 </NextLink>
                     {/* My Team */}

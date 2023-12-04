@@ -5,12 +5,13 @@
 .Container{
     position: relative;
     border-top: 2px solid rgba(7, 7, 47, 0.78);
-   align-items: center;
+    align-items: center;
     border-radius: 10px;
     height: 150px;
     background-color: rgba(128, 128, 128, 0.177);
     max-width: full;
 }
+
 .names{
     position: relative;
     display: flex;
@@ -99,7 +100,10 @@
     font-weight: 600;
     color: #ffff;
  }
+
+ 
  .modalHead{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,4 +111,76 @@
     color: white;
     padding: 0px 1em;
     cursor: pointer;
+ }
+ .div{
+   position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 255, 0.213);
+    border-radius: 10px;
+    color: white;
+    /* padding: 0px em; */
+ }
+
+ .pd{
+    position: relative;
+    text-transform: capitalize;
+    font-size: 20px;
+    left: 5%;
+ }
+ .boxx{
+    position: relative;
+ }  
+
+
+ .containers{
+    position: relative;
+    margin: auto;
+ }
+ .flex{
+    display: flex;
+    bottom: 0;
+ }
+
+ 
+ .btnn{
+    position: relative;
+    height: 30px;
+    width: 130px;
+    left: 85%;
+   top: 10px;
+   outline: none;
+   background-color:  rgba(227, 148, 2, 0.558); ;;
+   border: 1px solid green;
+   font-family: gilroy;
+   font-weight: 600;
+   letter-spacing: 2px;
+   transition: 0.2s ease-in-out;
+ }
+
+ .btnn:hover{
+   background-color: green;
+   cursor: pointer;
+   color:#ffff;
+}
+.wrapper{
+  position: relative;
+  height: auto;
+  width: 100%;
+  /* background-color: rgb(2, 2, 2); */
+}
+ .table{
+   color: black;
+   position: relative;
+      height: 100%;
+      width: 100%;
+ }
+
+ .tr{
+   position: relative;
+   color: black;
+   margin-left: 20px;
+   position: relative;
+   background-color: #008D4C;
  }

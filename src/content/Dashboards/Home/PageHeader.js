@@ -4,12 +4,12 @@ import { useContext } from 'react';
 import userContext from 'src/contexts/UserContext';
 
 function PageHeader() {
-  const {user} = useContext(userContext);
-  // console.log(user.data);
-  // const user = {
-  //   name: 'Numan Nezami',
-  //   avatar: '/static/images/avatars/4.jpg'
-  // };
+  // const {user} = useContext(userContext);
+  //  console.log(user.data);
+ const user = {
+   name: 'mayank gupta',
+  avatar: '/static/images/avatars/4.jpg'
+  };
   const theme = useTheme();
 
   return (
@@ -22,13 +22,13 @@ function PageHeader() {
             height: theme.spacing(8)
           }}
           variant="rounded"
-          alt={user.data.firstname} 
-          // src={user.data.avatar}
+          alt={user.name} 
+          src={user.avatar}
         />
       </Grid>
       <Grid item>
         <Typography variant="h3" component="h3" gutterBottom>
-          Welcome to FCD, <span style={{textTransform: 'capitalize', opacity:'.9'}}> {user.data.firstname} {user.data.lastname} </span>!
+          Welcome to FCD, <span style={{textTransform: 'capitalize', opacity:'.9'}}> {user.name}  </span>!
         </Typography>
         <Typography variant="subtitle2">
           Designation: Full Stack Developer

@@ -2,6 +2,9 @@ import Head from 'next/head';
 import Router from 'next/router';
 import nProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 import ThemeProvider from 'src/theme/ThemeProvider';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
@@ -31,6 +34,7 @@ function TokyoApp(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
       </Head>
+      <ToastContainer />
 
       <SidebarProvider>
         <ThemeProvider>
@@ -42,6 +46,7 @@ function TokyoApp(props) {
       </SidebarProvider>
     </CacheProvider>
     </AuthProvider>
+    
   );
 }
 

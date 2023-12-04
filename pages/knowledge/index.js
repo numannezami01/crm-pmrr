@@ -12,73 +12,29 @@ const KnowledgeBank = () => {
 
 
   return (
-    <>
-      <div className={style.main}>
+    <div className={style.main}>
         <div className={style.nav}>
-          <div className={style.photo}>
-           <Image src="/logo.png" height={50} width={130} alt="photos" />
-          </div>
-        </div>
-        <div className={style.top}>
-          <h2 className={style.text}>FCD CENTER</h2>
-          <Image className={style.img} height={400}width={1400} src="/wave.jpg" alt="" />
-        </div>
-        <div className={style.bottom}>
-         <h3 className={style.h3}>Our Categories will be</h3>
-         <div className={style.bigbox}>
-          <div className={style.box}>
-              <Image className={style.img} src="/mountain.jpg" height={800}width={300}  alt="photos" />
-            <div className={style.smbox}>
-              <Link className={style.links} href="/fcd">numan</Link>
-              {/* <div className={style.icons}> <FiArrowRight/></div> */}
-
-            </div>
-            </div>
-            <div className={style.box}>
-              <Image className={style.img} src="/mountain.jpg" height={800}width={300}  alt="photos" />
-            <div className={style.smbox}>
-              <Link className={style.links} href="/fcd">numan</Link>
-              {/* <div className={style.icons}> <FiArrowRight/></div> */}
-      
+             <Image src="/logo.png" height={50}width={200} alt="" />
+          </div>   
+           <div className={style.cato}>
+            <h2 className={style.h2}> FCD categories </h2>
+           </div>
+           <div className={style.Rec}>
+            <div className={style.boxes}>
+              <Link className={style.links} href="/food">
+                <h2 className={style.h3}>explore more - FOOD</h2>
+              </Link>  
               
             </div>
-          </div>
-          <div className={style.box}>
-              <Image className={style.img} src="/mountain.jpg" height={800}width={300}  alt="photos" />
-            <div className={style.smbox}>
-              <Link className={style.links} href="/fcd">numan</Link>
-              {/* <div className={style.icons}> <FiArrowRight/></div> */}
-            
-                
-
-            </div>
-          </div>
-          <div className={style.box}>
-              <Image className={style.img} src="/mountain.jpg" height={800}width={300}  alt="photos" />
-            <div className={style.smbox}>
-              <Link className={style.links} href="/fcd">numan</Link>
-              {/* <div className={style.icons}> <FiArrowRight/></div> */}
-           
-            
-            </div>
-          </div>
-          <div className={style.box}>
-              <Image className={style.img} src="/mountain.jpg" height={800}width={300}  alt="photos" />
-            <div className={style.smbox}>
-              <Link className={style.links} href="/fcd">numan</Link>
-              {/* <div className={style.icons}> <FiArrowRight/></div> */}
-  
-
-            </div>
-          </div>
-          
-         </div>
-
-        </div>
-      </div>
-    </>
-
-
+            <div className={style.boxes}></div>
+            <div className={style.boxes}></div>
+            <div className={style.boxes}></div>
+            <div className={style.boxes}></div>
+            <div className={style.boxes}></div>
+            <div className={style.boxes}></div>
+           </div>
+     </div>
+       
 
     
   )

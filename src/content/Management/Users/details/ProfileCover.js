@@ -78,9 +78,16 @@ const CardCoverAction = styled(Box)(
 `
 );
 
-const ProfileCover = () => {
-  const {user} = useContext(userContext);
-
+const ProfileCover = (user) => {
+  // const {user} = useContext(userContext);
+//  const user = {
+//                firstname:"numan",
+//                lastname:"nezami",
+//                email:"numannezami217@gmail.com",
+//                city:"delhi",
+//                state:"delhi",
+//                mobilenumber:"9934430822",
+// }
   return (
     <>
       <Box display="flex" mb={15}>
@@ -91,7 +98,7 @@ const ProfileCover = () => {
         </Tooltip>
         <Box>
           <Typography variant="h3" component="h3" gutterBottom>
-            Profile for: {user.data.firstname} {user.data.lastname}
+            Profile for: {user.firstname}{user.lastname}
           </Typography>
           <Typography variant="subtitle2">
             This is a profile page.
@@ -117,11 +124,11 @@ const ProfileCover = () => {
       </AvatarWrapper>
       <Box py={2} pl={2} mb={3}>
         <Typography gutterBottom variant="h4">
-          {user.data.firstname} {user.data.lastname}
+          {user.firstname}{user.lastname}
         </Typography>
-        <Typography variant="subtitle2">{user.data.email}</Typography>
+        <Typography variant="subtitle2">{user.email}</Typography>
         <Typography sx={{ py: 2 }} variant="subtitle2" color="text.primary">
-          {user.data.city} | {user.data.mobilenumber} | {user.data.state}
+          {user.city} | {user.mobilenumber} | {user.state}
         </Typography>
         <Box
           display={{ xs: 'block', md: 'flex' }}

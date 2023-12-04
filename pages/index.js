@@ -6,6 +6,8 @@ import {
 import BaseLayout from 'src/layouts/BaseLayout';
 
 import Head from 'next/head';
+import { toast } from "react-toastify";
+
 
 import Hero from 'src/content/Overview/Hero';
 
@@ -26,7 +28,6 @@ function Overview() {
       <Head>
         <title>Welcome to FCD</title>
       </Head>
-    
       <Hero />
       
     </OverviewWrapper>
